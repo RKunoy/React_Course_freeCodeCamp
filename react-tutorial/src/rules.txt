@@ -1,0 +1,11 @@
+// stateless functional component
+// always return JSX
+// React functions must start with Uppercase
+
+// JSX Rules
+// return single element
+// div / section / article or Fragment
+// use camelCase for html attribute
+// className instead of class
+// close every element
+// 'return' needs a value on same line
