@@ -9,6 +9,7 @@
 // className instead of class
 // close every element
 // 'return' needs a value on same line
+// 'children' tag will display tags between the opening and close tag
 
 // CSS Rules
 // Inline trumps the external code
