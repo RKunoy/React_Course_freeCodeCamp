@@ -5,7 +5,7 @@ import ReactDom from 'react-dom'
 // one dot '.' for each parent folder
 import './index.css'
 
-// setup variables
+// setup list
 const books = [
     {
         id: 1,
@@ -36,7 +36,7 @@ function BookList() {
                 return (
                     <Book 
                         key={book.id}
-                        {...book}
+                        {...book}   // 'spread syntax' passes all elements of the object
                     >
                     </Book>
                 )
@@ -47,11 +47,32 @@ function BookList() {
 
 
 const Book = ({img, title, author}) => {
+    // attribute, eventHandler
+    // onClick, onMouseOver
+
+    // Alerts 'Hello World!' and displays info in console
+    const clickHandler = (e) => {
+        console.log(e);
+        console.log(e.target);
+        alert('Hello World!');
+    }
+    // Prints author name in console
+    const mouseOver = (author) => {
+        console.log(author);
+    }
     return (
-    <article className='book'>
+    <article className='book' onMouseOver={()=> {
+        console.log(title);
+    }}>
         <img src={img} alt='' />
-        <h1>{title}</h1>
+        <h1 onClick={()=> console.log(title)}>{title}</h1>
         <h4>{author}</h4>
+        
+        <button type="button" onClick={clickHandler}>
+            Onclick Example
+        </button>
+        
+        <button type="button" onClick={() => mouseOver(author)}>More Complex Example</button>
     </article>
     );
 };
