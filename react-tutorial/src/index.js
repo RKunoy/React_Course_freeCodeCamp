@@ -12,25 +12,15 @@ import './index.css'
 function BookList() {
     return <section className='booklist'>
         <Book/>
-        <Book/>
-        <Book/>
-        <Book/>
-        <Book/>
-        <Book/>
-        <Book/>
-        <Book/>
     </section>
 }
 
 const Book = () => <article className='book'>
-    <Image></Image>
-    <Title></Title>
-    <Author></Author>
+    <img src='https://images-na.ssl-images-amazon.com
+    /images/I/51Hj-Lfw+0S._SX322_BO1,204,203,200_.jpg' alt='' />
+    <h1>Guide to a Better Life</h1>
+    <h4 >Gabe Newel</h4>
 </article>
 
-const Image = () => <img src='https://images-na.ssl-images-amazon.com/images/I/51Hj-Lfw+0S._SX322_BO1,204,203,200_.jpg' alt='' />
-
-const Title = () => <h1>Pepe the clown</h1>
-const Author = () => <h4>Dota player</h4>
 
 ReactDom.render(<BookList/>,document.getElementById('root'));

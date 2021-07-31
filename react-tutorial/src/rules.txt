@@ -9,3 +9,6 @@
 // className instead of class
 // close every element
 // 'return' needs a value on same line
+
+// CSS Rules
+// Inline trumps the external code
