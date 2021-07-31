@@ -6,47 +6,52 @@ import ReactDom from 'react-dom'
 import './index.css'
 
 // setup variables
-const firstBook = {
-    img:'https://images-na.ssl-images-amazon.com/images/I/51Hj-Lfw+0S._SX322_BO1,204,203,200_.jpg',
-    title: 'Guide to a Better Life',
-    author: 'Gabe Newel'
-};
+const books = [
+    {
+        id: 1,
+        img:'https://images-na.ssl-images-amazon.com/images/I/51Hj-Lfw+0S._SX322_BO1,204,203,200_.jpg',
+        title: 'Guide to a Better Life',
+        author: 'Joseph Stalin'
+    },
+    {
+        id: 2,
+        img:'https://images-na.ssl-images-amazon.com/images/I/41ItBEAc3kS._SX327_BO1,204,203,200_.jpg',
+        title: 'Nr1 President evur',
+        author: 'Some Redneck'
+    },
+    {
+        id: 3,
+        img:'https://images-na.ssl-images-amazon.com/images/I/41wBo8-XN7L._SX377_BO1,204,203,200_.jpg',
+        title: 'Shortcut to Depression',
+        author: 'USA'
+    }
+];
 
-const secondBook = {
-    img:'https://images-na.ssl-images-amazon.com/images/I/41ItBEAc3kS._SX327_BO1,204,203,200_.jpg',
-    title: 'Nr1 President evur',
-    author: 'Some Redneck'
-};
+
 
 function BookList() {
     return ( 
         <section className='booklist'>
-            <Book
-                img={firstBook.img} 
-                title={firstBook.title} 
-                author={firstBook.author} 
-            >
-                <p>Veniam duis officia do sit. Ipsum deserunt ea anim qui id. Non sint laboris fugiat mollit officia amet enim elit labore aliquip nostrud sint. Tempor elit ea voluptate velit aute aute Lorem.</p>
-            </Book>
-            
-            <Book 
-                img={secondBook.img} 
-                title={secondBook.title} 
-                author={secondBook.author} 
-            ></Book>
+            {books.map((book) => {
+                return (
+                    <Book 
+                        key={book.id}
+                        {...book}
+                    >
+                    </Book>
+                )
+            })}
         </section>
     );
 }
 
 
-const Book = (props) => {
-    console.log(props);
+const Book = ({img, title, author}) => {
     return (
     <article className='book'>
-        <img src={props.img} alt='' />
-        <h1>{props.title}</h1>
-        <h4>{props.author}</h4>
-        {props.children}
+        <img src={img} alt='' />
+        <h1>{title}</h1>
+        <h4>{author}</h4>
     </article>
     );
 };
